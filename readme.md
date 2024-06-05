@@ -1,4 +1,4 @@
-# dating API
+# Dating API
 
 Simple REST API 
 
