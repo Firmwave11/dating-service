@@ -1,0 +1,12 @@
+application:
+  secret: "4a1a170137d3f75876313a558f29fe9b"
+  port: 8080 # port server
+
+
+datingservice:
+  db:
+    lists: "user=postgres password=secrect host=localhost port=5432 dbname=postgres sslmode=disable TimeZone=Asia/Jakarta"
+    name: "postgres"
+
+cors:
+  whitelist: "*"

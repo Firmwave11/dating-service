@@ -1,0 +1,51 @@
+version: '3'
+
+services:
+  go-app:
+    container_name: dating-service
+    build: .
+    volumes:
+      - api_volume:/usr/src/app/
+    restart: on-failure
+    environment:
+      DATINGSERVICE_DB_LISTS: "user=postgres password=secrect host=postgres port=5432 dbname=postgres sslmode=disable TimeZone=Asia/Jakarta"
+      DATINGSERVICE_DB_NAME: "postgres"
+    ports:
+      - 8080:8080
+    depends_on:
+      - postgres
+    networks:
+      - fullstack
+  go_migrate:
+    image: migrate/migrate
+    depends_on:
+      - postgres
+    networks:
+      - fullstack
+    volumes:
+      - ./migrations:/migrations
+    working_dir: /migrations
+    command: ["-path", "/migrations", "-database",  "postgres://postgres:secrect@postgres:5432/postgres?sslmode=disable", "up", "3"]
+  postgres:
+    container_name: postgres
+    image: postgres:latest
+    environment:
+      - POSTGRES_PASSWORD=secrect
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
+      - DATABASE_HOST=127.0.0.1
+    ports:
+      - 5432:5432
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    restart: always
+    networks:
+      - fullstack
+
+volumes:  
+  api_volume:
+  pgdata:
+
+# Networks to be created to facilitate communication between containers
+networks:
+  fullstack:
