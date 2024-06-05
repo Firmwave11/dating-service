@@ -13,7 +13,11 @@ docker-compose up
 ```bash
 go install -tags ‘postgres’ github.com/golang-migrate/migrate/v4/cmd/migrate@latest
 ```
-3. just run with command
+3. run migrate Database
+```bash
+migrate -database "postgres://postgres:secrect@localhost:5432/postgres?sslmode=disable" -path /migrations 
+```
+4. just run with command
 ```bash
 go run main.go
 ```
