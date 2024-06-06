@@ -264,6 +264,56 @@
 							],
 							"cookie": [],
 							"body": "{\n    \"status\": {\n        \"code\": \"Succesfully Update PremiumPackage\",\n        \"message\": \"Succesfully Update PremiumPackage\"\n    },\n    \"data\": {\n        \"ID\": 2,\n        \"ProfileId\": 1,\n        \"PremiumPackageID\": 1,\n        \"CreatedAT\": null,\n        \"CreatedBY\": \"\",\n        \"UpdatedAT\": null,\n        \"UpdatedBY\": \"\",\n        \"DeletedAT\": null,\n        \"DeletedBY\": \"\"\n    }\n}"
+						},
+						{
+							"name": "Error Already have package",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/purchase/upgrade-profile/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"purchase",
+										"upgrade-profile",
+										"1"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": ""
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 06 Jun 2024 09:11:10 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "115"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": {\n        \"code\": \"000004\",\n        \"message\": \"Failed Purchase Package\",\n        \"reason\": \"You are aleready have premium packages\"\n    }\n}"
 						}
 					]
 				}

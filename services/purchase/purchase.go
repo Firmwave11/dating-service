@@ -2,8 +2,10 @@ package purchase
 
 import (
 	"context"
+	"database/sql"
 	purchaseModel "dating-service/models/purchase"
 	"dating-service/utils/response"
+	"errors"
 	"net/http"
 )
 
@@ -23,6 +25,16 @@ func (p *purchaseService) PurchasePackage(ctx context.Context, req purchaseModel
 	profile, err := p.userRepo.GetProfileByUserId(req.UserID.String())
 	if err != nil {
 		return response.Errors(ctx, http.StatusBadRequest, "000004", "Failed Purchase Package", "Failed Get UserId", err)
+	}
+
+	purchaseHistories, err := p.purchaseRepo.FindPurhaseHistoriesByProfile(int(profile.ID))
+	if err != nil && err != sql.ErrNoRows {
+		tx.Rollback()
+		return response.Errors(ctx, http.StatusBadRequest, "000004", "Failed Purchase Package", "Failed Insert PremiumPackage", err)
+	}
+
+	if len(purchaseHistories) > 0 {
+		return response.Errors(ctx, http.StatusBadRequest, "000004", "Failed Purchase Package", "You are aleready have premium packages", errors.New("Already have premium packages"))
 	}
 
 	modelPurchaseHistories := purchaseModel.PurchaseHistories{

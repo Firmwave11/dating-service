@@ -9,7 +9,7 @@ func (p *purchaseRepo) FindAllPremiumPackages() ([]*purchase.PremiumPackages, er
 		premiumPackages = make([]*purchase.PremiumPackages, 0)
 		err             error
 	)
-	query := `SELECT id, "Name", description, price, created_at, created_by, updated_at, updated_by, deleted_at, deleted_by, is_deleted FROM public.premium_packages;
+	query := `SELECT id, "name", description, price, created_at, created_by, updated_at, updated_by, deleted_at, deleted_by, is_deleted FROM public.premium_packages;
 	`
 
 	err = p.db.Select(&premiumPackages, query)
@@ -18,7 +18,7 @@ func (p *purchaseRepo) FindAllPremiumPackages() ([]*purchase.PremiumPackages, er
 }
 
 func (p *purchaseRepo) FindPremiumPackagesById(id int) (premiumPackages purchase.PremiumPackages, err error) {
-	query := `SELECT id, "Name", description, price, created_at, created_by, updated_at, updated_by, deleted_at, deleted_by, is_deleted FROM public.premium_packages where id = $1
+	query := `SELECT id, "name", description, price, created_at, created_by, updated_at, updated_by, deleted_at, deleted_by, is_deleted FROM public.premium_packages where id = $1
 	`
 
 	err = p.db.QueryRowx(query, id).StructScan(&premiumPackages)
