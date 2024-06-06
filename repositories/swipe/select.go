@@ -5,7 +5,7 @@ import (
 )
 
 func (t *swipeRepo) CountSwipeToday(profileId int) (count int, err error) {
-	query := `SELECT Count(*) FROM public.swipes where sender_profile_id = $1 and DATE(Created_at) >= CURRENT_DATE AND DATE(Created_at) < CURRENT_DATE + INTERVAL '1 DAY'`
+	query := `SELECT Count(*) FROM public.swipes where sender_profile_id = $1 and Created_at >= NOW() - INTERVAL '1 DAY'`
 
 	err = t.db.QueryRowx(query, profileId).Scan(&count)
 	return count, err
