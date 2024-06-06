@@ -1,0 +1,845 @@
+{
+	"info": {
+		"_postman_id": "14f980a4-72d6-4642-98dd-3340d41cfb38",
+		"name": "Dating-Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12728962"
+	},
+	"item": [
+		{
+			"name": "Purchase",
+			"item": [
+				{
+					"name": "Get All Purchase",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "zx4BVq0CU9oH++qq14MKB3XljuVPd5O819oIdokBnFVeE4NzZvmgL7Et8b+0+fk/qIpSGVLo8InPhEgUezE1SIlTTZA2jCgIllirMgYlpuEgCJUIdkJlvPP3C9YhV9AzB4sBd13XAoyZHLk6odkxluGFzdpF+FsBJGrxNAhB8TIImBMceycMsah2Khkl0mdhuph6K/hqjYUPe2JJB+RLvjxn2VH/q6cIWnoPwMc0Ii3Mfiu1PkhWyf4dS7Luh1awTGhv6+5azMx3fus7eAVXorhDxg==",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/purchase/premium-packages",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"purchase",
+								"premium-packages"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Token Invalid",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/purchase/premium-packages",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"purchase",
+										"premium-packages"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": ""
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 04 Jun 2024 12:19:55 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "82"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": {\n        \"code\": \"010105\",\n        \"message\": \"token.invalid\",\n        \"reason\": \"Unauthenticated\"\n    }\n}"
+						},
+						{
+							"name": "Succes Without Data",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/purchase/premium-packages",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"purchase",
+										"premium-packages"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": ""
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 04 Jun 2024 12:21:09 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "110"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": {\n        \"code\": \"Succesfully Get All PremiumPackage\",\n        \"message\": \"Success Get All PremiumPackage\"\n    },\n    \"data\": []\n}"
+						},
+						{
+							"name": "Success With Data",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/purchase/premium-packages",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"purchase",
+										"premium-packages"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": ""
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 04 Jun 2024 14:25:40 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "636"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": {\n        \"code\": \"Succesfully Get All PremiumPackage\",\n        \"message\": \"Success Get All PremiumPackage\"\n    },\n    \"data\": [\n        {\n            \"ID\": 1,\n            \"Name\": \"Unlimited Swipe\",\n            \"Description\": \"No swipe quota for user\",\n            \"Price\": 10,\n            \"CreatedAT\": \"2024-06-04T19:54:47.790048Z\",\n            \"CreatedBY\": \"System\",\n            \"UpdatedAT\": \"2024-06-04T19:54:47.790048Z\",\n            \"UpdatedBY\": \"System\",\n            \"DeletedAT\": null,\n            \"DeletedBY\": null,\n            \"IsDeleted\": false\n        },\n        {\n            \"ID\": 2,\n            \"Name\": \"Verified Account\",\n            \"Description\": \"Verified label for user\",\n            \"Price\": 10,\n            \"CreatedAT\": \"2024-06-04T19:54:47.790048Z\",\n            \"CreatedBY\": \"System\",\n            \"UpdatedAT\": \"2024-06-04T19:54:47.790048Z\",\n            \"UpdatedBY\": \"System\",\n            \"DeletedAT\": null,\n            \"DeletedBY\": null,\n            \"IsDeleted\": false\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Purchase Premium",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "zx4BVq0CU9oH++qq14MKB3XljuVPd5O819oIdokBnFVeE4NzZvmgL7Et8b+0+fk/qIpSGVLo8InPhEgUezE1SIlTTZA2jCgIllirMgYlpuEgCJUIdkJlvPP3C9YhV9AzB4sBd13XAoyZHLk6odkxluGFzdpF+FsBJGrxNAhB8TIImBMceycMsah2Khkl0mdhuph6K/hqjYUPe2JJB+RLvjxn2VH/q6cIWnoPwMc0Ii3Mfiu1PkhWyf4dS7Luh1awTGhv6+5azMx3fus7eAVXorhDxg==",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/purchase/upgrade-profile/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"purchase",
+								"upgrade-profile",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success Upgrade Profile",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/purchase/upgrade-profile/1",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"purchase",
+										"upgrade-profile",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": ""
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 04 Jun 2024 14:31:22 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "249"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": {\n        \"code\": \"Succesfully Update PremiumPackage\",\n        \"message\": \"Succesfully Update PremiumPackage\"\n    },\n    \"data\": {\n        \"ID\": 2,\n        \"ProfileId\": 1,\n        \"PremiumPackageID\": 1,\n        \"CreatedAT\": null,\n        \"CreatedBY\": \"\",\n        \"UpdatedAT\": null,\n        \"UpdatedBY\": \"\",\n        \"DeletedAT\": null,\n        \"DeletedBY\": \"\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Swipe",
+			"item": [
+				{
+					"name": "Get Swipe Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "L+MWQNzdq4hQMUIYmhqzFospQczILmmvkfbDD9pGCoz2mz13bI7ftwusnOSlIr/whRzoU6pYNZjQbHZsEz7KtH64igbUaDvsEIoYr6BAmFDA5hDXeUGGDV8a5Wv24FP+B69P9BoVnO+VNCjzWZjEV4Lp2JCF9pz6YDQM/p8Wu7cXnDIFq3sP3quBYLymUQU2yNWghSQffxS+y7hjzZbLdvSMdyGTQKrhtfo7WFtNwnZlsWQaM8xlUkZb5ZrxGq4BpZ2cj2c9wczLqbjuGxKxO8lAJg==",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/swipe/profile",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"swipe",
+								"profile"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Get Swipe Profile Success",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/swipe/profile",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"swipe",
+										"profile"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": ""
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 05 Jun 2024 08:28:53 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "478"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": {\n        \"code\": \"Succesfully Get Profile Swipe\",\n        \"message\": \"Success Get Profile Swipe\"\n    },\n    \"data\": {\n        \"ID\": 4,\n        \"FirstName\": \"test\",\n        \"LastName\": \"1235\",\n        \"Gender\": \"female\",\n        \"BirthDate\": \"0001-01-01T00:00:00Z\",\n        \"PhoneNumber\": \"082123123125\",\n        \"Nickname\": \"test1235\",\n        \"Description\": \"testt\",\n        \"Photo\": \"test\",\n        \"UpdatedAT\": \"2024-06-05T14:52:43.104072Z\",\n        \"CreatedAT\": \"2024-06-05T14:52:43.104072Z\",\n        \"UserAccountID\": \"fea1749e-883e-4afb-9caf-94a89d570f24\",\n        \"IsDeleted\": false,\n        \"IsPremium\": false,\n        \"IsVerified\": false\n    }\n}"
+						},
+						{
+							"name": "Reached Limit Swipe",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:8080/swipe/profile",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"swipe",
+										"profile"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": ""
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 05 Jun 2024 09:07:42 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "112"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": {\n        \"code\": \"000006\",\n        \"message\": \"Failed Get Swipe\",\n        \"reason\": \"Your Accout has reach limit 1 day 10 swipe\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Post Swipe Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "L+MWQNzdq4hQMUIYmhqzFospQczILmmvkfbDD9pGCoz2mz13bI7ftwusnOSlIr/whRzoU6pYNZjQbHZsEz7KtH64igbUaDvsEIoYr6BAmFDA5hDXeUGGDV8a5Wv24FP+B69P9BoVnO+VNCjzWZjEV4Lp2JCF9pz6YDQM/p8Wu7cXnDIFq3sP3quBYLymUQU2yNWghSQffxS+y7hjzZbLdvSMdyGTQKrhtfo7WFtNwnZlsWQaM8xlUkZb5ZrxGq4BpZ2cj2c9wczLqbjuGxKxO8lAJg==",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"receiver_profile_id\":4,\n    \"action_type_id\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/swipe/profile",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"swipe",
+								"profile"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Post Swipe Profile Succes",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"receiver_profile_id\":8,\n    \"action_type_id\":1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/swipe/profile",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"swipe",
+										"profile"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": ""
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 05 Jun 2024 08:37:39 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "67"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": {\n        \"code\": \"000007\",\n        \"message\": \"Succesfully Swipe Profile\"\n    }\n}"
+						},
+						{
+							"name": "Reach Limit Swipe",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"receiver_profile_id\":14,\n    \"action_type_id\":1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:8080/swipe/profile",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"swipe",
+										"profile"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": ""
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=UTF-8"
+								},
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 05 Jun 2024 09:08:12 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "115"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": {\n        \"code\": \"000007\",\n        \"message\": \"Failed insert Swipe\",\n        \"reason\": \"Your Accout has reach limit 1 day 10 swipe\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"test123@gmail.com\",\n    \"phoneNumber\":\"082123123123\",\n    \"first_name\":\"test\",\n    \"last_name\":\"123\",\n    \"nickname\":\"test123\",\n    \"description\":\"testt\",\n    \"gender\":\"man\",\n    \"password\":\"test123\",\n    \"photo\":\"test\",\n    \"birthDate\":\"1998-01-02\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success Register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"test123@gmail.com\",\n    \"phoneNumber\":\"082123123123\",\n    \"first_name\":\"test\",\n    \"last_name\":\"123\",\n    \"nickname\":\"test123\",\n    \"description\":\"testt\",\n    \"gender\":\"man\",\n    \"password\":\"test123\",\n    \"photo\":\"test\",\n    \"birthDate\":\"1998-01-02T15:04:05Z07:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": ""
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Jun 2024 09:56:23 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "391"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": {\n        \"code\": \"Succesfully Register User\",\n        \"message\": \"Success Register\"\n    },\n    \"data\": {\n        \"ID\": 1,\n        \"FirstName\": \"test\",\n        \"LastName\": \"123\",\n        \"Gender\": \"man\",\n        \"BirthDate\": \"0001-01-01T00:00:00Z\",\n        \"PhoneNumber\": \"082123123123\",\n        \"Nickname\": \"test123\",\n        \"Description\": \"testt\",\n        \"Photo\": \"test\",\n        \"UpdatedAT\": null,\n        \"CreatedAT\": null,\n        \"UserAccountID\": \"3471a78b-5488-4f77-821e-f40759da2309\",\n        \"IsDeleted\": false,\n        \"IsPremium\": false\n    }\n}"
+				},
+				{
+					"name": "Failed Account Already Registered",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"test123@gmail.com\",\n    \"phoneNumber\":\"082123123123\",\n    \"first_name\":\"test\",\n    \"last_name\":\"123\",\n    \"nickname\":\"test123\",\n    \"description\":\"testt\",\n    \"gender\":\"man\",\n    \"password\":\"test123\",\n    \"photo\":\"test\",\n    \"birthDate\":\"1998-01-02T15:04:05Z07:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": ""
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Jun 2024 10:06:17 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "95"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": {\n        \"code\": \"000001\",\n        \"message\": \"Account already registered\",\n        \"reason\": \"Failed Register\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"test123@gmail.com\",\n    \"password\":\"test1234\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"test123@gmail.com\",\n    \"password\":\"test123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": ""
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Jun 2024 09:58:39 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "332"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": {\n        \"code\": \"Succesfully Login\",\n        \"message\": \"Success Login\"\n    },\n    \"data\": {\n        \"TokenID\": \"00000000-0000-0000-0000-000000000000\",\n        \"UserAccountID\": \"3471a78b-5488-4f77-821e-f40759da2309\",\n        \"AuthToken\": \"pocHqBRRCNTT-FkwwfEweVsn3Mzsw6W3TWZV6uWc36Q=\",\n        \"CreatedAt\": \"2024-06-04T16:58:39.975988+07:00\",\n        \"ExpiredAt\": \"2024-06-04T17:58:39.975988+07:00\"\n    }\n}"
+				},
+				{
+					"name": "Failed Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"test123@gmail.com\",\n    \"password\":\"test1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": ""
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 04 Jun 2024 10:01:45 GMT"
+						},
+						{
+							"key": "Content-Length",
+							"value": "78"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": {\n        \"code\": \"000002\",\n        \"message\": \"Failed Login\",\n        \"reason\": \"Failed Login\"\n    }\n}"
+				}
+			]
+		}
+	]
+}

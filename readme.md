@@ -22,6 +22,12 @@ migrate -database "postgres://postgres:secrect@localhost:5432/postgres?sslmode=d
 go run main.go
 ```
 
+## List Endpoint and Test Case
+Import postman collection 
+```bash
+Dating-Service.postman_collection.json
+```
+
 
 ## Structure Service
 
